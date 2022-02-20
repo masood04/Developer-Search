@@ -31,7 +31,7 @@ class Project(models.Model):
     
     @property
     def reviewers(self):
-        query_set = self.review_set.all().value_list('owner__id', flat=True)
+        query_set = self.review_set.all().values_list('owner__id', flat=True)
         return query_set
 
     @property
